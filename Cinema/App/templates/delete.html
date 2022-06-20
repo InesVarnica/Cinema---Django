@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block delete_movie%}
+<form action="{% url 'delete_director' data %}" method="POST">
+    <p>Are you sure?</p>
+    {% csrf_token %}
+    <input type="submit" name="yes" value="yes">
+    <input type="submit" name="no" value="no">
+</form>
+{% endblock %}

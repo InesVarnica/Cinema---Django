@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% block ticket_per_user %}
+    {% for ticket_per_user in data%}
+        {{ ticket_per_user.seat_number}}
+        {{ ticket_per_user.movie_t}}
+        
+    <br>
+    {% endfor %}
+{% endblock %}

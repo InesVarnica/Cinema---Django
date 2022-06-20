@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block ticket_per_projection %}
+    {% for ticket_per_projection in data%}
+        {{ ticket_per_projection.seat_number}}
+        {{ ticket_per_projection.movie_t}}  
+        
+    <br>
+    
+    {% endfor %}
+    Number_of_tickets:
+    {{ data.count }}
+{% endblock %}

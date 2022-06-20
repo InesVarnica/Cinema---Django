@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{% block ticket_per_projection_and_user %}
+    {% for ticket_per_projection in data%}
+        {{ ticket_per_projection.user_t}}  
+    <br>
+    {% endfor %}
+{% endblock %}

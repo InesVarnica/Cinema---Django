@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block movies %}
+    {% for movie in data%}
+     {{movie}} 
+     <a href="{%url 'buy_ticket' movie.id %}">Buy ticket </a> <br>
+     {% if user.is_staff %}
+     <a href="{%url 'delete_movie' movie.id %}"> Delete</a>
+     <a href="{%url 'edit_movie' movie.id %}"> Edit</a>
+     <a href="{%url 'ticket_per_projection' movie.id %}">See tickets</a><br>
+     <a href="{%url 'ticket_per_projection_user' movie.id %}">See users</a><br>
+     {% endif %}
+    <br>
+    {% endfor %}
+    <a href="{%url 'mytickets' user.id %}">See your tickets</a><br>
+    {% if user.is_staff %}
+    <a href="{%url 'add_movie' %}">Add movie</a><br>
+    {% endif %}
+{% endblock %}

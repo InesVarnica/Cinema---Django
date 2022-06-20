@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% block tickets %}
+    {% for ticket in data%}
+        {{ ticket.seat_number}}
+        {{ ticket.movie_t}}
+        {{ ticket.user_t}}
+    <br>
+    {% endfor %}
+{% endblock %}
